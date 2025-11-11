@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portofolio — Achmad Andi Prayoga</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#">Achmad Andi Prayoga</a>
+        <nav class="nav">
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#education" data-i18n="nav.education">Pendidikan</a>
+          <a href="#experience" data-i18n="nav.experience">Pengalaman</a>
+          <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="lang-selector" id="langSelector" aria-label="Language selector">
+          <!-- Indonesia: red over white -->
+          <button class="lang-btn" data-lang="id" title="Indonesia" aria-label="Bahasa Indonesia">
+            <span class="flag">
+              <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                <defs><clipPath id="c-id"><circle cx="18" cy="18" r="18"/></clipPath></defs>
+                <g clip-path="url(#c-id)">
+                  <rect width="36" height="18" y="0" fill="#E30A17"/>
+                  <rect width="36" height="18" y="18" fill="#FFFFFF"/>
+                </g>
+              </svg>
+            </span>
+          </button>
+          <!-- English (United Kingdom) simplified -->
+          <button class="lang-btn" data-lang="en" title="English" aria-label="English">
+            <span class="flag">
+              <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                <defs><clipPath id="c-en"><circle cx="18" cy="18" r="18"/></clipPath></defs>
+                <g clip-path="url(#c-en)">
+                  <rect width="36" height="36" fill="#012169"/>
+                  <g stroke="#fff" stroke-width="3">
+                    <path d="M0 18h36M18 0v36"/>
+                  </g>
+                  <g stroke="#C8102E" stroke-width="2">
+                    <path d="M0 18h36M18 0v36"/>
+                    <path d="M0 0l36 36M36 0L0 36" stroke="#C8102E" stroke-width="2.5"/>
+                  </g>
+                </g>
+              </svg>
+            </span>
+          </button>
+          <!-- Netherlands: red white blue horizontal -->
+          <button class="lang-btn" data-lang="nl" title="Nederlands" aria-label="Nederlands">
+            <span class="flag">
+              <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                <defs><clipPath id="c-nl"><circle cx="18" cy="18" r="18"/></clipPath></defs>
+                <g clip-path="url(#c-nl)">
+                  <rect width="36" height="12" y="0" fill="#AE1C28"/>
+                  <rect width="36" height="12" y="12" fill="#FFFFFF"/>
+                  <rect width="36" height="12" y="24" fill="#21468B"/>
+                </g>
+              </svg>
+            </span>
+          </button>
+        <!-- header social links removed — social links are shown in footer only -->
+        <button class="btn btn-primary" id="contactBtn">
+          <span data-i18n="btn.hire">Hire me</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <div class="hero-info-card">
+              <div class="hero-header">
+                <img
+                  id="profilePhoto"
+                  class="profile-photo"
+                  src="profile 2.jpg"
+                  alt="Foto profil Achmad Andi Prayoga"
+                />
+                <div class="profile-switch" aria-label="Switch profile image">
+                  <!-- Thumb: with suit -->
+                  <button type="button" class="thumb active" data-src="profile 2.jpg" aria-pressed="true" title="Berkemeja / With suit">
+                    <img src="profile 2.jpg" alt="Photo with suit" />
+                  </button>
+                  <!-- Thumb: without suit -->
+                  <button type="button" class="thumb" data-src="profile.jpg" aria-pressed="false" title="Tanpa jas / Without suit">
+                    <img src="profile.jpg" alt="Photo without suit" />
+                  </button>
+                </div>
+                <div class="hero-heading">
+                  <h1 data-i18n="hero.greeting">Hi, Saya Achmad Andi Prayoga.</h1>
+                  <p class="muted small" data-i18n="hero.role">Junior IT Support</p>
+                </div>
+              </div>
+
+              <div class="hero-bio">
+                <p class="bio-text" data-i18n="hero.bio">
+                  Seorang lulusan S1 Teknik Informatika dengan dasar kuat dalam
+                  logika pemrograman dan pengembangan aplikasi. Berusia
+                  <span id="age"></span> tahun, kelahiran Sidoarjo, dengan
+                  passion di bidang IT dan web development.
+                </p>
+
+                <div class="quick-info">
+                  <span class="info-chip" data-i18n="quick.location"
+                    ><i class="info-icon">📍</i> Sidoarjo</span
+                  >
+                  <span class="info-chip" data-i18n="quick.degree"
+                    ><i class="info-icon">🎓</i> S1 Teknik Informatika</span
+                  >
+                  <span class="info-chip" data-i18n="quick.availability"
+                    ><i class="info-icon">💼</i> Available for hire</span
+                  >
+                </div>
+                <!-- Data Diri (moved here) -->
+                <div class="section-collapsible info-section scroll-animate-delay-1">
+                  <div class="section-header">
+                    <h3 data-i18n="personal.title">
+                      <span lang="id">Data Diri</span>
+                      <span lang="en" class="translation">Personal Info</span>
+                      <span lang="nl" class="translation">Persoonlijke gegevens</span>
+                    </h3>
+                    <svg
+                      class="toggle-icon"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      height="24"
+                    >
+                      <path
+                        d="M7 10l5 5 5-5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </div>
+                  <div class="section-content">
+                    <div class="info-grid">
+                      <div class="info-item">
+                        <div class="info-label" data-i18n="identity.birth.label">
+                          <span lang="id">Tempat, Tanggal Lahir</span>
+                          <span lang="en" class="translation">Place, Date of Birth</span>
+                          <span lang="nl" class="translation">Geboorteplaats en datum</span>
+                        </div>
+                        <div class="info-value" data-i18n="identity.birth.value">
+                          <span lang="id">Sidoarjo, 28 Januari 2005</span>
+                          <div class="translation muted small" lang="en">Sidoarjo, 28 January 2005</div>
+                          <div class="translation muted small" lang="nl">Sidoarjo, 28 januari 2005</div>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <div class="info-label" data-i18n="identity.religion.label">
+                          <span lang="id">Agama</span>
+                          <span lang="en" class="translation">Religion</span>
+                          <span lang="nl" class="translation">Religie</span>
+                        </div>
+                        <div class="info-value" data-i18n="identity.religion.value">
+                          <span lang="id">Islam</span>
+                          <div class="translation muted small" lang="en">Islam</div>
+                          <div class="translation muted small" lang="nl">Islam</div>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <div class="info-label" data-i18n="identity.height.label">
+                          <span lang="id">Tinggi Badan</span>
+                          <span lang="en" class="translation">Height</span>
+                          <span lang="nl" class="translation">Lengte</span>
+                        </div>
+                        <div class="info-value" data-i18n="identity.height.value">
+                          <span lang="id">180 Cm</span>
+                          <div class="translation muted small" lang="en">180 cm</div>
+                          <div class="translation muted small" lang="nl">180 cm</div>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <div class="info-label" data-i18n="identity.weight.label">
+                          <span lang="id">Berat Badan</span>
+                          <span lang="en" class="translation">Weight</span>
+                          <span lang="nl" class="translation">Gewicht</span>
+                        </div>
+                        <div class="info-value" data-i18n="identity.weight.value">
+                          <span lang="id">65 Kg</span>
+                          <div class="translation muted small" lang="en">65 kg</div>
+                          <div class="translation muted small" lang="nl">65 kg</div>
+                        </div>
+                      </div>
+
+                      <div class="info-item">
+                        <div class="info-label" data-i18n="identity.hobby.label">
+                          <span lang="id">Hobi</span>
+                          <span lang="en" class="translation">Hobby</span>
+                          <span lang="nl" class="translation">Hobby</span>
+                        </div>
+                        <div class="info-value" data-i18n="identity.hobby.value">
+                          <span lang="id">Renang</span>
+                          <div class="translation muted small" lang="en">Swimming</div>
+                          <div class="translation muted small" lang="nl">Zwemmen</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-actions scroll-animate-delay-2">
+                <a class="btn btn-ghost" href="#experience" data-i18n="hero.cta.experience">Lihat pengalaman saya</a>
+                <a class="btn btn-primary" href="#contact" data-i18n="hero.cta.contact">Hubungi</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      
+  <section id="experience" class="container experience">
+        <h2 data-i18n="experience.title">Pengalaman Kerja</h2>
+        <div class="experience-list">
+          <article class="exp-item">
+            <h3 data-i18n="exp.one.title">
+              OFERO JX SIDOARJO — Staff Toko (Store Boy)
+            </h3>
+            <p class="muted" data-i18n="exp.one.address">
+              Jl. Diponegoro No.98, Lemah Putro, Lemahputro, Kec. Sidoarjo,
+              Kabupaten Sidoarjo, Jawa Timur 61212
+            </p>
+            <p>
+              <strong data-i18n="exp.period.label">Periode:</strong>
+              <span data-i18n="exp.one.period">Januari 2025 - Mei 2025</span>
+            </p>
+            <ul>
+              <li data-i18n="exp.one.resp.1">
+                Mengelola penjualan toko setiap hari
+              </li>
+              <li data-i18n="exp.one.resp.2">
+                Melakukan penyebaran brosur di setiap kalangan rumah
+              </li>
+              <li data-i18n="exp.one.resp.3">Membersihkan area toko</li>
+              <li data-i18n="exp.one.resp.4">
+                Melakukan penjualan online (live di media sosial, share brosur
+                di grup media sosial)
+              </li>
+            </ul>
+          </article>
+
+          <article class="exp-item">
+            <h3 data-i18n="exp.two.title">
+              Toko Pelangi Stationary — SPB (Sales Promotion Boy)
+            </h3>
+            <p class="muted" data-i18n="exp.two.address">
+              Jl. Raya Kemantren No.26, RT.7/RW.2, Keputran, Kemantren,
+              Sidoarjo, Sidoarjo Regency, East Java 61273
+            </p>
+            <p>
+              <strong data-i18n="exp.period.label">Periode:</strong>
+              <span data-i18n="exp.two.period"
+                >Agustus 2023 - Desember 2023</span
+              >
+            </p>
+            <ul>
+              <li data-i18n="exp.two.resp.1">Membersihkan stand toko</li>
+              <li data-i18n="exp.two.resp.2">
+                Memberi label produk (barcode) dan price tag di setiap stand
+              </li>
+              <li data-i18n="exp.two.resp.3">Membersihkan produk</li>
+              <li data-i18n="exp.two.resp.4">Merestock barang / produk</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="education" class="container education">
+        <h2 data-i18n="education.title">Pendidikan</h2>
+        <div class="education-list">
+          <article class="edu-item">
+            <h3 data-i18n="edu.sd.title">SDN BORO</h3>
+            <p data-i18n="edu.sd.address">
+              Boro, Kec. Tanggulangin, Kabupaten Sidoarjo, Jawa Timur 61272
+            </p>
+            <p>
+              <strong data-i18n="edu.period.label">Periode:</strong>
+              <span data-i18n="edu.sd.period">2011 - 2017</span>
+            </p>
+          </article>
+
+          <article class="edu-item">
+            <h3 data-i18n="edu.smp.title">SMP DHARMAWANITA 7 TANGGULANGIN</h3>
+            <p data-i18n="edu.smp.address">
+              Kalitengah Utara Rt.01 Rw.01, Kalitengah, Kec. Tanggulangin, Kec.
+              Sidoarjo, Prov, Jawa Timur
+            </p>
+            <p>
+              <strong data-i18n="edu.period.label">Periode:</strong>
+              <span data-i18n="edu.smp.period">2018 - 2019</span>
+            </p>
+          </article>
+
+          <article class="edu-item">
+            <h3 data-i18n="edu.smk.title">SMK — SMK ANTARTIKA 2 SIDOARJO</h3>
+            <p data-i18n="edu.smk.address">
+              Jl. Raya Siwalanpanji No.6, Bedrek, Siwalanpanji, Kec. Buduran,
+              Kabupaten Sidoarjo, Jawa Timur 61252
+            </p>
+            <p>
+              <strong data-i18n="edu.period.label">Periode:</strong>
+              <span data-i18n="edu.smk.period">2020 - 2023</span>
+            </p>
+            <ul>
+              <li data-i18n="edu.smk.note.1">Mendapatkan Sertifikasi BNSP</li>
+              <li data-i18n="edu.smk.note.2">Pramuka</li>
+            </ul>
+          </article>
+
+          <article class="edu-item">
+            <h3 data-i18n="edu.univ.title">
+              S1 — UNIVERSITAS MUHAMMADIYAH SIDOARJO
+            </h3>
+            <p data-i18n="edu.univ.address">
+              Jl. Mojopahit No.666 B, Sidowayah, Celep, Kec. Sidoarjo, Kabupaten
+              Sidoarjo, Jawa Timur 61215
+            </p>
+            <p>
+              <strong data-i18n="edu.period.label">Periode:</strong>
+              <span data-i18n="edu.univ.period">2025 - Sekarang</span>
+            </p>
+            <ul>
+              <li data-i18n="edu.univ.note.1">
+                Mengikuti ASLAB (Asisten Laboratorium)
+              </li>
+              <li data-i18n="edu.univ.note.2">UKM (Panahan)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="container skills">
+        <h2 data-i18n="skills.title">Skills</h2>
+
+        <div class="skills-block">
+          <h3 data-i18n="skills.soft.title">Soft Skills</h3>
+          <div class="skills-grid soft-grid">
+            <div class="skill">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="7"
+                  r="3"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M4 20c0-3.3 2.7-6 6-6h4c3.3 0 6 2.7 6 6"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span data-i18n="skills.soft.team">Kerja sama tim</span>
+            </div>
+            <div class="skill">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="3"
+                  y="4"
+                  width="18"
+                  height="14"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path d="M3 10h18" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+              <span data-i18n="skills.soft.discipline">Etos kerja / Disiplin</span>
+            </div>
+            <div class="skill">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 8h18v8H3z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M7 12h10"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <span data-i18n="skills.soft.communication">Komunikasi efektif</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-block">
+          <h3 data-i18n="skills.hard.title">Hard / Software Skills</h3>
+          <div class="skills-grid software-grid">
+            <!-- Design / Adobe -->
+            <div class="skill">
+              <svg class="icon" viewBox="0 0 24 24">
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="3"
+                  fill="currentColor"
+                /></svg
+              ><span data-i18n="skills.hard.ai">Adobe Illustrator</span>
+            </div>
+            <div class="skill">
+              <svg class="icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" fill="currentColor" /></svg
+              ><span data-i18n="skills.hard.indesign">Adobe InDesign</span>
+            </div>
+            <div class="skill">
+              <svg class="icon" viewBox="0 0 24 24">
+                <rect
+                  x="2"
+                  y="3"
+                  width="20"
+                  height="14"
+                  rx="2"
+                  fill="currentColor"
+                /></svg
+              ><span data-i18n="skills.hard.lightroom">Adobe Lightroom</span>
+            </div>
+            <div class="skill">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M3 4h18v7H3z" fill="currentColor" /></svg
+              ><span data-i18n="skills.hard.photoshop">Adobe Photoshop</span>
+            </div>
+            <div class="skill">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M3 5h18v11H3z" fill="currentColor" /></svg
+              ><span data-i18n="skills.hard.premiere">Adobe Premiere Pro</span>
+            </div>
+            <div class="skill">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M4 4h16v16H4z" fill="currentColor" /></svg
+              ><span data-i18n="skills.hard.blender">Blender</span>
+            </div>
+            <div class="skill">
+              <svg class="icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" fill="currentColor" /></svg
+              ><span data-i18n="skills.hard.canva">Canva</span>
+            </div>
+            <div class="skill">
+              <svg class="icon" viewBox="0 0 24 24">
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="2"
+                  fill="currentColor"
+                /></svg
+              ><span data-i18n="skills.hard.corel">CorelDraw</span>
+            </div>
+
+            <!-- Programming / Office -->
+            <div class="skill">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M4 4h16v16H4z" fill="currentColor" /></svg
+              ><span data-i18n="skills.hard.java">Java</span>
+            </div>
+            <div class="skill">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path
+                  d="M6 4l6 8-6 8"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+              ><span data-i18n="skills.hard.js">JavaScript</span>
+            </div>
+            <div class="skill">
+              <svg class="icon" viewBox="0 0 24 24">
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="14"
+                  rx="2"
+                  fill="currentColor"
+                /></svg
+              ><span data-i18n="skills.hard.ppt">Microsoft PowerPoint</span>
+            </div>
+            <div class="skill">
+              <svg class="icon" viewBox="0 0 24 24">
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="14"
+                  rx="2"
+                  fill="currentColor"
+                /></svg
+              ><span data-i18n="skills.hard.word">Microsoft Word</span>
+            </div>
+            <div class="skill">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path
+                  d="M12 3c3 0 5 2 5 5 0 3-2 4-5 6-3-2-5-3-5-6 0-3 2-5 5-5z"
+                  fill="currentColor"
+                /></svg
+              ><span data-i18n="skills.hard.python">Python</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="projects" class="container projects">
+        <h2 data-i18n="projects.title" class="with-glow">Projects</h2>
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project">
+            <div class="project-thumb">
+              <img src="project1.jpg" alt="Project 1" class="project-image" />
+            </div>
+            <div class="project-content">
+                    <h3 data-i18n="project.one.title">Portfolio Website</h3>
+                    <p class="muted" data-i18n="project.one.desc">
+                      Personal portfolio website built with HTML, CSS, and JavaScript
+                    </p>
+              <div class="project-tags">
+                      <span class="tag" data-i18n="project.one.tag.1">HTML</span>
+                      <span class="tag" data-i18n="project.one.tag.2">CSS</span>
+                      <span class="tag" data-i18n="project.one.tag.3">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link" title="View Live">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15 3h6v6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 14L21 3"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span data-i18n="project.link.live">Live Demo</span>
+                </a>
+                <a href="#" class="project-link" title="View Code">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M16 18l6-6-6-6M8 6l-6 6 6 6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span data-i18n="project.link.code">Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project">
+            <div class="project-thumb">
+              <img src="project2.jpg" alt="Project 2" class="project-image" />
+            </div>
+            <div class="project-content">
+                    <h3 data-i18n="project.two.title">Java Calculator App</h3>
+                    <p class="muted" data-i18n="project.two.desc">Scientific calculator with advanced mathematical functions</p>
+              <div class="project-tags">
+                      <span class="tag" data-i18n="project.two.tag.1">Java</span>
+                      <span class="tag" data-i18n="project.two.tag.2">JavaFX</span>
+                      <span class="tag" data-i18n="project.two.tag.3">UI Design</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link" title="View Live">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15 3h6v6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 14L21 3"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span data-i18n="project.link.live">Live Demo</span>
+                </a>
+                <a href="#" class="project-link" title="View Code">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M16 18l6-6-6-6M8 6l-6 6 6 6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span data-i18n="project.link.code">Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project">
+            <div class="project-thumb">
+              <img src="project3.jpg" alt="Project 3" class="project-image" />
+            </div>
+            <div class="project-content">
+                    <h3 data-i18n="project.three.title">Python Data Visualization</h3>
+                    <p class="muted" data-i18n="project.three.desc">Data analysis and visualization tool using Python libraries</p>
+              <div class="project-tags">
+                      <span class="tag" data-i18n="project.three.tag.1">Python</span>
+                      <span class="tag" data-i18n="project.three.tag.2">Pandas</span>
+                      <span class="tag" data-i18n="project.three.tag.3">Matplotlib</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link" title="View Live">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M15 3h6v6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10 14L21 3"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span data-i18n="project.link.live">Live Demo</span>
+                </a>
+                <a href="#" class="project-link" title="View Code">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M16 18l6-6-6-6M8 6l-6 6 6 6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span data-i18n="project.link.code">Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="container contact">
+        <div class="contact-grid">
+          <div class="contact-form-section">
+            <h2 data-i18n="contact.title">Contact</h2>
+            <p data-i18n="contact.intro">
+              Ingin berkolaborasi? Kirim pesan singkat — saya akan membalas.
+            </p>
+            <form id="contactForm" class="contact-form">
+              <label>
+                <span data-i18n="contact.form.name">Nama</span>
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                <span data-i18n="contact.form.email">Email</span>
+                <input type="email" name="email" required />
+              </label>
+              <label>
+                <span data-i18n="contact.form.message">Pesan</span>
+                <textarea name="message" rows="4" required></textarea>
+              </label>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit"><span data-i18n="contact.form.submit">Kirim</span></button>
+                <button class="btn btn-ghost" type="reset"><span data-i18n="contact.form.reset">Reset</span></button>
+              </div>
+            </form>
+          </div>
+          <div class="dev-skills-section">
+            <h3 data-i18n="devskills.title">Development Skills</h3>
+            <ul class="dev-skills-list">
+              <li data-i18n="devskills.frontend">Front-end Development</li>
+              <li data-i18n="devskills.responsive">Responsive Design</li>
+              <li data-i18n="devskills.ux">UX & Visual Design</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <small data-i18n="footer.copyright">© 2025 Achmad Andi Prayoga — Dibuat dengan ♥</small>
+          <div class="social-links">
+            <a
+              href="https://www.tiktok.com/@lxynnnn._"
+              target="_blank"
+              class="social-link"
+              title="TikTok"
+            >
+              <svg
+                class="social-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M15 4.5v6c2.5 0 4.5-1.5 5.5-3.5h-3v-3h4.3c.1.3.2.7.2 1v9.8c0 4-3.3 7.2-7.3 7.2-4 0-7.2-3.3-7.2-7.2s3.3-7.2 7.2-7.2v3c-2.3 0-4.2 1.9-4.2 4.2s1.9 4.2 4.2 4.2 4.2-1.9 4.2-4.2V4.5h-3.9z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span class="social-name">TikTok</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/achmad-andi-prayoga-a27389398/"
+              target="_blank"
+              class="social-link"
+              title="LinkedIn"
+            >
+              <svg
+                class="social-icon"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11.5 20h-3v-11h3v11zm-1.5-12.3c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm13 12.3h-3v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7h-3v-11h2.9v1.5h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.6 2 3.6 4.6v6.5z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span class="social-name">LinkedIn</span>
+            </a>
+            <a
+              href="mailto:achmadandiprayoga31@gmail.com"
+              target="_blank"
+              class="social-link"
+              title="Email"
+            >
+              <svg
+                class="social-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M4 5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4zm0-2a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H4z"
+                  fill="currentColor"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M3.5 6.5A1 1 0 0 1 4 6h16a1 1 0 0 1 .8.4l-8.8 6.8-8.8-6.8a1 1 0 0 1 .3-.4z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span class="social-name">Email</span>
+            </a>
+            <a
+              href="https://wa.me/6289652926828"
+              target="_blank"
+              class="social-link"
+              title="WhatsApp"
+            >
+              <svg
+                class="social-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12 2C6.48 2 2 6.48 2 12c0 1.61.39 3.13 1.07 4.47L2 21l4.53-1.07C7.87 20.61 9.39 21 11 21c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.77 14.07c-.34.95-1.69 1.73-2.77 1.96-.73.15-1.68.27-4.88-.98-4.09-1.6-6.73-5.53-6.93-5.78-.2-.25-1.67-2.22-1.67-4.24 0-2.02 1.06-3.01 1.44-3.42.38-.41.82-.51 1.1-.51.27 0 .54 0 .78.01.24.01.56-.09.88.67.32.77 1.09 2.67 1.19 2.86.1.19.17.41.03.65-.13.24-.2.39-.4.61-.19.22-.4.49-.57.66-.19.19-.39.4-.17.76.22.36.99 1.56 2.13 2.53 1.46 1.25 2.69 1.64 3.07 1.82.38.18.6.15.82-.09.22-.24.95-1.11 1.2-1.49.25-.38.5-.32.84-.19.34.13 2.18 1.03 2.56 1.21.38.19.63.28.72.43.09.15.09.9-.25 1.85z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span class="social-name">WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button
+      id="backToTop"
+      class="back-to-top"
+      title="Kembali ke atas"
+      aria-label="Kembali ke atas halaman"
+    >
+      <svg
+        class="icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 20V4M5 11l7-7 7 7"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
